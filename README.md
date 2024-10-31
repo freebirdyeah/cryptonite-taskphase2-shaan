@@ -1,2 +1,2 @@
-# cryptonite_tp2_shaan
-💎for Cryptonite TP-2 💎
+# 💎 Cryptonite: Junior Task Phase - 2 💎
+for Cryptonite JTP-2 tasks
