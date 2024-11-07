@@ -16,7 +16,7 @@ sstv -d message.wav -o result.png
 
 which gave me `result.png` and the flag which was an image.
 
-flag: ![m00nwalk flag](./m00nwalk_flag.png)
+flag: ![m00nwalk flag](./images/m00nwalk_flag.png)
 
 
 ### incorrect tangents
