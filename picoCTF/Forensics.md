@@ -67,3 +67,13 @@ On reading `flag.txt` we get:-
 
 flag: `picoCTF{h1dd3n_1n_pLa1n_51GHT_18375919}`
 
+### incorrect tangents
+
+Instead of trying to decode the two `.txt` files using a multi-decoder tool, I wasted time searching for clues in the `extracted-folder`
+
+### learnings from TFTP
+
+1. learned how to look at .pcapng files using Wireshark and extract files
+2. learned how to use steghide to extract flag from an image
+3. learned how to extract a .deb file
+
