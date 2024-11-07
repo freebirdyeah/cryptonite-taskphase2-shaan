@@ -29,3 +29,41 @@ On learning that the signal is SSTV encoded, I installed `qsstv` software howeve
 
 1. got to know about SSTV
 2. learned how to decode SSTV audio files to get images
+
+## Trivial Flag Transfer Protocol
+
+The challenge gives us a `.pcapng` file to analyse which contains captured network packets and records. I open the file using Wireshark and look at the details of each packet transfer.
+
+![img1](./images/tftp1.png)
+
+on researching about the different protocols mentioned, TFTP is the one which is used for actual data transfer and I can extract data from this file by exporting `objects > TFTP`
+
+After exporting objects I got 3 `.bmp` pictures, `instructions.txt` (encrypted), `plan.txt` (encrypted) and one `program.deb` file, `program.deb` is a debian executable file which I find by running `$ file program.deb` and it can be extracted using `dpkg-deb -x program.deb extracted-folder/`
+
+On going through `extracted-folder` I find a binary of `steghide` tool and files related to it which must mean this tool will be used in the challenge.
+
+I shift my focus towards the `instructions.txt` file and `plan` file which are encrypted, I identify the encryption process (turned out to be ROT13) by using this tool: `https://www.cachesleuth.com/multidecoder/`
+
+now on decrypting `instructions.txt` file and `plan` file respectively I get:-
+
+```
+TFTPDOESNTENCRYPTOURTRAFFICSOWEMUSTDISGUISEOURFLAGTRANSFER.FIGUREOUTAWAYTOHIDETHEFLAGANDIWILLCHECKBACKFORTHEPLAN
+
+IUSEDTHEPROGRAMANDHIDITWITH-DUEDILIGENCE.CHECKOUTTHEPHOTOS
+```
+
+Seems the flag is hidden in the photos and `DUEDILIGENCE` is the password to recover the flag.
+
+On using `steghide` to recover the flag, I use it on every photo with the obtained password, `picture3.bmp` yields the flag on:-
+
+
+```
+$ steghide extract -sf picture3.bmp
+Enter passphrase:
+wrote extracted data to "flag.txt".
+```
+
+On reading `flag.txt` we get:-
+
+flag: `picoCTF{h1dd3n_1n_pLa1n_51GHT_18375919}`
+
