@@ -36,3 +36,66 @@ None
 
 1. learning how to work with gdb
 2. learning how to read basic asm instructions like `mov`
+
+
+## Vault-door 3
+
+It was pretty simple, once I understood the Java code written. The program just took in a password, and scrambled the characters as per the following code:-
+
+```
+char[] buffer = new char[32];
+        int i;
+        for (i=0; i<8; i++) {
+            buffer[i] = password.charAt(i);
+        }
+        for (; i<16; i++) {
+            buffer[i] = password.charAt(23-i);
+        }
+        for (; i<32; i+=2) {
+            buffer[i] = password.charAt(46-i);
+        }
+        for (i=31; i>=17; i-=2) {
+            buffer[i] = password.charAt(i);
+        }
+
+```
+
+and it checked the scrambled password to: `jU5t_a_sna_3lpm18g947_u_4_m9r54f`
+
+to reverse this I implemented a simple Python script:-
+
+
+```
+
+scrambled_pass = "jU5t_a_sna_3lpm18g947_u_4_m9r54f"
+password = []
+
+
+for i in range(0, 8):
+	password[i] = scrambled_pass[i]
+
+for i in range(8, 16):
+	password[23-i] = scrambled_pass[i]
+
+for i in range(16, 32, 2):
+    	password[46 - i] = scrambled_pass[i]
+
+for i in range(31, 16, -2):
+    	password[i] = scrambled_pass[i]
+
+
+unscrambled_pass = "".join(scrambled_passw)
+print(unscrambled_pass)
+
+```
+
+and after wrapping it up in picoCTF{} I got: `picoCTF{jU5t_a_s1mpl3_an4gr4m_4_u_79958f}`
+
+### Incorrect tangents
+
+None
+
+### learnings
+
+1. learned how to reverse engineer weird substitutions
+
