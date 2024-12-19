@@ -99,3 +99,48 @@ None
 
 1. learned how to reverse engineer weird substitutions
 
+
+## ARMssembly 1
+
+I compiled the code using `qemu` just like ARMssembly0 but this time merely running the code didn't work as I needed to find the input this time myself, I googled each assembly instruction (and put it into CHATGPT for commenting)  and what it did and then followed the instructions line by line
+
+The program had many repetitive stores of `w0`but after going through each these final instructions helped me with the flag:-
+
+
+```
+ldr     w0, [sp, 12]         ; Load the initial value from offset 12 (X)
+sub     w0, w1, w0           ; Perform subtraction (27 - X)
+```
+
+and the value `27` was obtained by following along with rest of the instructions earlier, now i checked the main func and it had the instruction:-
+
+
+```
+
+str     w0, [x29, 44]         ; Store result of atoi (the converted integer) at offset 44
+
+    ldr     w0, [x29, 44]         ; Load the input
+    bl      func                  ; Call func with this value
+
+    cmp     w0, 0                 ; Compare the result of `func` with 0
+    bne     .L4                   ; If not equal, go to .L4
+
+    adrp    x0, .LC0              ; "You win!" string
+    add     x0, x0, :lo12:.LC0    
+    bl      puts                 
+
+    b       .L6                   ; go to .L6
+.L4:
+    adrp    x0, .LC1              ; "You Lose :(" string
+    add     x0, x0, :lo12:.LC1    
+    bl      puts                  
+
+.L6:
+    nop                          
+    ldp     x29, x30, [sp], 48   
+    ret                          
+```
+
+Jumping to L4 meant we lost, and that happened when `func` outputs non-zero integer so I knew I must input X as 27 to get zero as func's output and to continue to L6 and win.
+
+converting 27 to 8 byte hex and I get my flag: `picoCTF{0000001b}`
