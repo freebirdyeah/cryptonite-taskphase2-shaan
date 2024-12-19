@@ -129,7 +129,7 @@ I got the flag only after I ran the script and self-inputted as the program inte
 2. got to learn a little more about algebra involving modulo function
  
 
-# custom encryption
+## custom encryption
 
 solved this by tracing my steps back one by one:-
 
@@ -278,6 +278,20 @@ got stuck for a while trying to convert the `semi_cipher` to the flag, the probl
 1. Diffie-Hellman key exchange
 2. reversing encryption functions which use XOR (XOR it again to get the original thing)
 
-### script explanations
 
-WIP
+
+## miniRSA
+
+After going through RSA's wikipedia page, I noticed a section mentioning the "Coppersmith's attack" which said RSA can be decrypted in cases the value of 'e' is small.
+
+I immediately searched for tools, which can help me decrypt RSA using Copppersmith's Attack and I found one through which I got the flag.
+
+flag: `picoCTF{n33d_a_lArg3r_e_ccaa7776}`
+
+### incorrect tangents
+
+None, I just needed to read the wikipedia page.
+
+### learnings from miniRSA
+
+1. learned how to decrypt using Coppersmith's attack for small values of 'e'
