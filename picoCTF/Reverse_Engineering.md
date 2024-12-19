@@ -68,24 +68,24 @@ to reverse this I implemented a simple Python script:-
 ```
 
 scrambled_pass = "jU5t_a_sna_3lpm18g947_u_4_m9r54f"
-password = []
+flag = [None]*32
 
 
 for i in range(0, 8):
-	password[i] = scrambled_pass[i]
+	flag[i] = scrambled_pass[i]
 
 for i in range(8, 16):
-	password[23-i] = scrambled_pass[i]
+	flag[23-i] = scrambled_pass[i]
 
 for i in range(16, 32, 2):
-    	password[46 - i] = scrambled_pass[i]
+    	flag[46 - i] = scrambled_pass[i]
 
 for i in range(31, 16, -2):
-    	password[i] = scrambled_pass[i]
+    	flag[i] = scrambled_pass[i]
 
 
-unscrambled_pass = "".join(scrambled_passw)
-print(unscrambled_pass)
+flag = "".join(flag)
+print(flag)
 
 ```
 
