@@ -22,3 +22,13 @@ I figured it out with the help of given link and I just had to replace the time-
 flag: `picoCTF{71m3_7r4v311ng_p1c7ur3_3e336564}`
 
 
+## Mob psycho
+
+I was given a `.apk` I file, I downloaded it and looked at the first hint which said: `you can unzip .apk files`, on running `unzip` I got a bunch of files and I ran `ls -Ral | grep flag` and I got output saying some `flag.txt` file existed in those files.
+
+
+I ran `find ~ -name flag.txt` and I got the path to the `flag.txt` file. However on `cat`ing it I realised it was encrypted.
+
+I went over to my trusty `dcoder cipher identifer tool` and decoded it (was in hex) and got the flag.
+
+flag: `picoCTF{ax8mC0RU6ve_NX85l4ax8mCl_a3eb5ac2}`
