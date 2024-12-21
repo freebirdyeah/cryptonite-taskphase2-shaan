@@ -129,3 +129,15 @@ Very easy: `cat anthem.flag.txt | grep pico`
 flag: `picoCTF{gr3p_15_@w3s0m3_58f5c024}`
 
 
+## m00nwalk 2
+
+Pretty easy as well but this time however there was the annoyance of figuring the password from the image. I did what I did in the OG m00nwalk challenge and used the `sstv` program I downloaded from GitHub to decode the file, it said "there is a hidden message" so I tried using `binwalk` and `zsteg` on the resultant image but found nothing.
+
+I installed the clues audio files and decoded them and the first clue was sufficient, I then used the password given along with `steghide` on the `message.wav` file to get the flag.
+
+```
+~$ steghide extract -sf message.wav --passphrase "hidden_stegosaurus"
+wrote extracted data to "steganopayload12154.txt".
+```
+
+got the flag on `cat`ing it. flag: `picoCTF{the_answer_lies_hidden_in_plain_sight}`
