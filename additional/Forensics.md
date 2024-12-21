@@ -122,3 +122,10 @@ and the submitted the length of the Linux Partition, to `nc saturn.picoctf.net 5
 flag: `picoCTF{mm15_f7w!}`
 
 
+## Lookey here
+
+Very easy: `cat anthem.flag.txt | grep pico`
+
+flag: `picoCTF{gr3p_15_@w3s0m3_58f5c024}`
+
+
