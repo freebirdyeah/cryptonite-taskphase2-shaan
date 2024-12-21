@@ -141,3 +141,9 @@ wrote extracted data to "steganopayload12154.txt".
 ```
 
 got the flag on `cat`ing it. flag: `picoCTF{the_answer_lies_hidden_in_plain_sight}`
+
+## So Meta
+
+just run exiftool on the image.
+
+flag: `picoCTF{s0_m3ta_fec06741}`
