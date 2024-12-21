@@ -71,3 +71,11 @@ rax            0x4af4b             307019
 ```
 
 flag: `picoCTF{307019}`
+
+## vault door 1
+
+I just looked at the code and wrote down the flag by hand.
+
+flag: `picoCTF{d35cr4mbl3_tH3_cH4r4cT3r5_ff63b0}`
+
+
