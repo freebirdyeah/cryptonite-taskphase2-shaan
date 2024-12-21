@@ -44,3 +44,26 @@ print("".join(denc))
 ```
 
 flag:`picoCTF{R0UND_N_R0UND_ADD17EC2}`
+
+
+## basic mod2
+
+This time it involved modular multiplicative inverses, I looked them up on wikipedia and found modular multiplicative inverse 'a' w.r.t 'm' of 'x' is a number such that ax mod m = 1
+
+This is the script I made:-
+
+```
+import sympy
+
+char_list = list('*') + list("ABCDEFGHIJKLMNOPQRSTUVWXYZ") + list("0123456789") + list('_')
+enc = [268, 413, 438, 313, 426, 337, 272, 188, 392, 338, 77, 332, 139, 113, 92, 239, 247, 120, 419, 72, 295, 190, 131]
+denc = []
+
+for i in enc:
+        j = sympy.mod_inverse(i%41, 41)
+        denc.append(char_list[j])
+
+print("".join(denc))
+```
+
+flag: `picoCTF{1NV3R53LY_H4RD_8A05D939}`
