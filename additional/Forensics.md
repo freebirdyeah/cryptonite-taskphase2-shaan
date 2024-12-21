@@ -88,3 +88,16 @@ into it and viewed the flag image.
 
 
 flag: `picoCTF{Hiddinng_An_imag3_within_@n_imag9_ad9f6587}`
+
+## st3g0
+
+A simple check using `zsteg -a pico.flag.png` was sufficient:-
+
+```
+b1,rgb,lsb,xy       .. text: "picoCTF{7h3r3_15_n0_5p00n_96ae0ac1}$t3g0"
+
+```
+
+flag: `picoCTF{7h3r3_15_n0_5p00n_96ae0ac1}`
+
+
