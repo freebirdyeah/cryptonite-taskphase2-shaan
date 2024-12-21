@@ -26,3 +26,21 @@ This time I had the 'spaces can be ignored or are missing' option on dcode.fr 's
 So I used it.
 
 flag: `picoCTF{N6R4M_4N41Y515_15_73D10U5_8E1BF808}`
+
+## basic mod1
+
+I used this script to decrypt:-
+
+```
+
+char_list = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ") + list("0123456789") + list('_')
+enc = [350, 63, 353, 198, 114, 369, 346, 184, 202, 322, 94, 235, 114, 110, 185, 188, 225, 212, 366, 374, 261, 213]
+denc = []
+
+for i in enc:
+        denc.append(char_list[i%37])
+
+print("".join(denc))
+```
+
+flag:`picoCTF{R0UND_N_R0UND_ADD17EC2}`
