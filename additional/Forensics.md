@@ -32,3 +32,15 @@ I ran `find ~ -name flag.txt` and I got the path to the `flag.txt` file. However
 I went over to my trusty `dcoder cipher identifer tool` and decoded it (was in hex) and got the flag.
 
 flag: `picoCTF{ax8mC0RU6ve_NX85l4ax8mCl_a3eb5ac2}`
+
+
+## PcapPoisoning
+
+I checked the Export Objects section but there was nothing to be extracted from there, On going through the 
+packets, I noticed the 3rd packet had the data 'flag is close' I initially thought `gc2VjcmV0OiBwaWNvQ1RGe` to 
+be the encoded flag as it was in every packet when I filtered using 'FTP-DATA' but on going through each and 
+every packet quickly I noticed one in the end which had the flag.
+
+flag: `picoCTF{P64P_4N4L7S1S_SU55355FUL_4624a8b6}`
+
+
