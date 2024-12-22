@@ -110,3 +110,11 @@ Hacked d=20702173290422837002474475545271829782882304928968346682153637778386821
 and put all of this on dcode.fr's tool for cracking RSA and got the flag.
 
 flag: `picoCTF{proving_wiener_6907362}`
+
+## waves over lambda
+
+Opened it. Looked like monoalphabetic substitution, went over to dcode.fr's tool, decoded it.
+
+Very easy.
+
+flag: `frequency_is_c_over_lambda_agflcgtyue` (flag not in usual format)
