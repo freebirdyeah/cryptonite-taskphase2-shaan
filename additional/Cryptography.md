@@ -71,6 +71,6 @@ flag: `picoCTF{1NV3R53LY_H4RD_8A05D939}`
 
 ## HideToSee
 
-I ran `binwalk` and `zsteg` but neither worked, the hint said try extracting the file so I used `steghide`, I ran `stehide extract -sf atbash.jpg` and entered nothing when it asked for password, It worked!
+I ran `binwalk` and `zsteg` but neither worked, the hint said try extracting the file so I used `steghide`, I ran `stehide extract -sf atbash.jpg` and entered nothing when it asked for password, It surpisingly worked, I got the encrypted flag in a `.txt` file and decrypted using an online tool.
 
 flag: `picoCTF{atbash_crack_ac751ec6}`
