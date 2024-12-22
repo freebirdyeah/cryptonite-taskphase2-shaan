@@ -147,3 +147,11 @@ got the flag on `cat`ing it. flag: `picoCTF{the_answer_lies_hidden_in_plain_sigh
 just run exiftool on the image.
 
 flag: `picoCTF{s0_m3ta_fec06741}`
+
+## Matryoshka doll
+
+Just by the name I knew what to do, I ran `binwalk -e dolls.jpg` and it created a directory called `base_images` when I unzipped the image.
+
+I kept `cd`ing into every folder and unzipped every image I got and at last I got `flag.txt`
+
+flag: `picoCTF{96fac089316e094d41ea046900197662}`
