@@ -118,3 +118,11 @@ Opened it. Looked like monoalphabetic substitution, went over to dcode.fr's tool
 Very easy.
 
 flag: `frequency_is_c_over_lambda_agflcgtyue` (flag not in usual format)
+
+## credstuff
+
+Searched for user 'cultiris' in the usernames.txt file, got the line number then went to the corresponding password in passwords.txt
+
+password was encrypted using ROT-13, decrypted it to get the flag.
+
+flag: `picoCTF{C7r1F_54V35_71M3}`
