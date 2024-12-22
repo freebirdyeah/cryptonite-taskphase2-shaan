@@ -155,3 +155,14 @@ Just by the name I knew what to do, I ran `binwalk -e dolls.jpg` and it created 
 I kept `cd`ing into every folder and unzipped every image I got and at last I got `flag.txt`
 
 flag: `picoCTF{96fac089316e094d41ea046900197662}`
+
+
+## Wireshark doo dooo do doo...
+
+Opened the `.pcapng` file and went to `Export Objects > HTTP` and saw a bunch of files there and saved them all.
+
+I ran `file *` to see the filetype of every file I saved and saw all of them as data except 2 were ascii text one of them being `%2f`, I `cat`ed the file and saw the flag encrypted in Caesar Cipher, decrypted it and got the flag.
+
+flag: `picoCTF{p33kab00_1_s33_u_deadbeef}`
+
+
