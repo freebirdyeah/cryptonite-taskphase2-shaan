@@ -294,4 +294,4 @@ None, I just needed to read the wikipedia page.
 
 ### learnings from miniRSA
 
-1. learned how to decrypt using Coppersmith's attack for small values of 'e'
+1. learned how to decrypt using low-exponent attack for small values of 'e'
